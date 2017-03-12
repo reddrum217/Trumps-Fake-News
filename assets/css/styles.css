@@ -31,6 +31,7 @@ div.fnn-logo {
     width: auto;
     margin: 0 auto;
     margin-left: 350px;
+    display: inline-block;
     content: url("../../assets/images/fnn-logo.png");
     z-index: 10;
 }
@@ -90,7 +91,7 @@ div.fnn-logo {
 }
 
 
-#white-box{
+#headline-box{
   margin-top: 455px;
   margin-left: 40px;
   background: rgb(200,200,200);
