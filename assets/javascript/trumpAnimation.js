@@ -1,21 +1,21 @@
 // Animate Characters Start
-alert('hi');
 
 
-var cartoonFileLeft = 'assets/images/PlayersL/' + team + 'L.png';
+
+// var cartoonFileLeft = 'assets/images/PlayersL/' + team + 'L.png';
 
 
-masterAnimate()
+masterAnimate("left", "right")
 
 // runIt();
 function masterAnimate(trumpLeft, trumpRight) {
     animate1()
     // $('#textUpdate1').hide();
-    $('#trump-left').append(charImageL);
+    $('#trump-left').append(trumpLeft);
     $('#trump-left').css("visibility", "hidden");
     // $('#characterLeft').css('z-index', 2000);
 
-    $('#trump-right').append(charImageR);
+    $('#trump-right').append(trumpRight);
     $('#trump-right').css("visibility", "hidden");;
 
   
@@ -25,14 +25,16 @@ function masterAnimate(trumpLeft, trumpRight) {
     // setTimeout(function(){ $("img[data-playerteamnumber='2']").css("visibility", "visible"); }, 3600);
 
     function animate1 () {
-        var themesong = new Audio('assets/sound/NFL_incredibox.mp3');
-        themesong.volume = .2;
+        var themesong = new Audio('./assets/sound/incredibox.mp3');
+        themesong.volume = 1;
         themesong.play();
 
         function ram1(){
-        var hit1 = new Audio('assets/sound/trumpfakenews.mp3');
+        var hit1 = new Audio('./assets/sound/trumpfakenews.mp3');
+        hit1.volume = .5;
         hit1.play();
         }
+        
         setTimeout(ram1, 1000*9);
 
 
@@ -195,41 +197,4 @@ function masterAnimate(trumpLeft, trumpRight) {
 
 
 
-
-// PUT THIS BACK IN THE HTML FILE TO TEST
-
-//alert('hi');<script type="text/javascript">
-    // Event listener for our cat-button
-    
-
-      // Storing our giphy API URL for a random cat image
-      var queryURL = "http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=trump";
-
-      // TrumpID: l0Iyau7QcKtKUYIda
-      // link to JSON
-
-      // Perfoming an AJAX GET request to our queryURL
-      $.ajax({
-        url: queryURL,
-        method: "GET"
-      })
-
-      // After the data from the AJAX request comes back
-      .done(function(response) {
-
-        // Saving the image_original_url property
-        var imageUrl = response.data[3].image_original_url;
-
-        // Creating and storing an image tag
-        var trumpImage = $("<img>");
-
-        // Setting the catImage src attribute to imageUrl
-        trumpImage.attr("src", imageUrl);
-        trumpImage.attr("alt", "trump image");
-
-        // Prepending the catImage to the images div
-        $("#television").prepend(trumpImage);
-      });
-    
-  </script>
 
