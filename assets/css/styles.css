@@ -30,6 +30,7 @@ div.fnn-logo {
     height: 100px;
     width: auto;
     margin: 0 auto;
+    margin-left: 350px;
     content: url("../../assets/images/fnn-logo.png");
     z-index: 10;
 }
