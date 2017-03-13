@@ -1,25 +1,37 @@
 // Animate Characters Start
+alert('hi');
 
-
+var cartoonFileLeft = 'assets/images/PlayersL/' + team + 'L.png';
+            characterImageLeft = $('<img>').attr('src', cartoonFileLeft);
 
 // var cartoonFileLeft = 'assets/images/PlayersL/' + team + 'L.png';
+var trumpyleftHead = 'assets/images/trumphe.png';
+var trumpyleftMouth = 'assets/images/trumpme.png';
+var trumpyrightHead = 'assets/images/trumphw.png';
+var trumpyrightMouth = 'assets/images/trumpmw.png';
 
-
-masterAnimate("left", "right")
+leftAnimate()
 
 // runIt();
-function masterAnimate(trumpLeft, trumpRight) {
+function leftAnimate(trumpLeftHead, trumpLeftMouth) {
     animate1()
     // $('#textUpdate1').hide();
-    $('#trump-left').append(trumpLeft);
-    $('#trump-left').css("visibility", "hidden");
+    $('#trump-left-head').append(trumpyLeftHead);
+    $('#trump-left-head').css("visibility", "hidden");
+    $('#trump-left-mouth').append(trumpyLeftMouth);
+    $('#trump-left-mouth').css("visibility", "hidden");
     // $('#characterLeft').css('z-index', 2000);
+},
+    
 
-    $('#trump-right').append(trumpRight);
-    $('#trump-right').css("visibility", "hidden");;
+function rightAnimate(trumpRightHead, trumpRightMouth) {
 
-  
+    $('#trump-right-head').append(trumpyRightHead);
+    $('#trump-right-head').css("visibility", "hidden");;
+    $('#trump-right-mouth').append(trumpyRightMouth);
+    $('#trump-right-mouth').css("visibility", "hidden");;
 
+}
     // setTimeout(function(){ $("img[data-playerteamnumber='1']").css("visibility", "visible"); }, 1600);
 
     // setTimeout(function(){ $("img[data-playerteamnumber='2']").css("visibility", "visible"); }, 3600);

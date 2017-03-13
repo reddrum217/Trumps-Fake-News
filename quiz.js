@@ -5,7 +5,7 @@ var quiz1 = {
 	questions: [
 	
 	//THIS IS FAKE NEWS
-	question1 = {
+	question1 {
 		question:'President Obama issues a full pardon for convicted rapper C-Murder, for killing a teenager outside nightclub in louisiana',
 		fake: true 
 	},
@@ -104,8 +104,8 @@ var quiz3 = {
 	
 	//THIS IS FAKE NEWS
 	question1 = {
-		question:'Trump Reports World Record 39 Under Par, 12 Holes-in-One, during Golf Outing with Japanese Prime Minister Shinzo Abe',
-		fake: true 
+		questionA:'Trump Reports World Record 39 Under Par, 12 Holes-in-One, during Golf Outing with Japanese Prime Minister Shinzo Abe',
+		fake: true
 	},
 	question2 = {
 		question:'Rite Greens, a shop in Denver, Colorado has taken the steps needed to accept food stamps for the purposes of purchasing marijuana effectively leading to taxpayer funded marijuana for welfare recipients'
@@ -147,7 +147,25 @@ var quiz3 = {
 	},
 	]};
 
+//Create a start button for the Questions page
 
+//First let the computer choose quiz #1
+
+
+//create a schema for a Mysql table
+
+//once the use is back then allow the user to choose start
+//Let the computer pull up quiz 1
+//Let the computer choose randlomly if FAKE NEWS goe son top or bottom
+//Start the countdown
+//Allow the user to choose a fake news
+//RUn the appropriate animation
+//after animation let it automatically go to the next question without user interaction
+//Disply the stats
+//Display a message in headline.
+//When the game ends allow the user to tweet their results
+//After the tweet go back to the beginning to allow user to play again
+//If the user logs out, end the session
 
 
 //Let the user choose login or sign up
@@ -165,5 +183,8 @@ var quiz3 = {
 //When the game ends allow the user to tweet their results
 //After the tweet go back to the beginning to allow user to play again
 //If the user logs out, end the session
+
+
+
 
 

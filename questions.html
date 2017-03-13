@@ -1,3 +1,5 @@
+<!--This is going to be the questions page -->
+
 <!DOCTYPE <html>
 <html lang="en">
 
@@ -14,39 +16,41 @@
 
     <!-- Add Bootstrap Themes Here (Just uncomment the ones below for example)-->
     <!--<link rel="stylesheet" href="https://bootswatch.com/cerulean/bootstrap.min.css">-->
-	
-
 </head>
 
 <body>
+
 	
   <div class="wrapper">
 
-  <header>
-         <div class="fnn-logo"></div>
-         <button type="button" class="btn btn-default homelogin">
-         <p><a href="modal.html">Log In | Sign Up</a></p></button>
+  	<header>
+         <div class="fnn-logo2"></div>
+         <button type="button" class="btn btn-default startquiz">
+         <p>START QUIZ</p></button>
     
 	</header>
     
   
 		<section>
-			<div id="television">
+			<div id="television-change">
 			<!--This is where the television graphics will go. The videos of Trump will display here on the homepage-->	
 
 
-				<div id="live">LIVE</div>
         <div id="breaking-news" class="breaking-news">BREAKING NEWS</div>
 
-        <div id="headline-box"><h1>WILL YOU BE NEXT TO FIND THE FAKE NEWS</h1></div>
-        <div id="timer">4:45</div>
-        <div id="stats-box">Jonathan has found all the fake news!!!</div>
+        <div id="headline-box-change"><h1>WHICH ONE OF THESE IS THE FAKE NEWS?</h1></div>
+        <div id="timer-change">4:45</div>
+        <div id="stats-box-change">WHICH ONE IS THE FAKE NEWS!?</div>
 
-        
+        <aside id="trump-left-head"></aside>
+        <aside id="trump-left-mouth"></aside>
+
+        <aside id="trump-right-head"></aside>
+        <aside id="trump-right-mouth"></aside>
 
 
 				<!--Need to add what page it will route to-->
-				
+			
 
 			</div>
 
@@ -63,32 +67,27 @@
 
 
 
-
-
-
 	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  	<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   
     <!-- <script src="assets/javascript/smAnimation.js"></script> -->
   
   <script src="./assets/javascript/trumpAnimation.js"></script>
+  <script src="./assets/javascript/quiz.js"></script>
 
-<!--  Scripts-->
-    
 
-<script type="text/javascript">
-    // Event listener for our cat-button
-    
+	<script type="text/javascript">
 
-      // Storing our giphy API URL for a random cat image
-      var queryURL = "http://api.giphy.com/v1/gifs/search?q=trump+fake+news&api_key=dc6zaTOxFJmzC";
+
+  //second AJAX
+      var queryURL2 = "http://api.giphy.com/v1/gifs/search?q=rainbow-abstract-glare&api_key=dc6zaTOxFJmzC";
 
       // TrumpID: l0Iyau7QcKtKUYIda
       // link to JSON
 
       // Perfoming an AJAX GET request to our queryURL
       $.ajax({
-        url: queryURL,
+        url: queryURL2,
         method: "GET"
       })
 
@@ -96,24 +95,23 @@
       .done(function(response) {
 
         // Saving the image_original_url property
-        var imageUrl = response.data[0].images.original.url;
+        var imageUrl2 = response.data[1].images.original.url;
 
         // Creating and storing an image tag
-        var trumpImage = $("<img>");
+        var rainbowImage = $("<img>");
 
         // Setting the catImage src attribute to imageUrl
-        trumpImage.attr("src", imageUrl);
-        trumpImage.attr("alt", "trump image");
-        trumpImage.attr("class", "fake-video");
+        rainbowImage.attr("src", imageUrl2);
+        rainbowImage.attr("alt", "rainbow image");
+        rainbowImage.attr("class", "rainbow-video");
         // Prepending the catImage to the images div
-        $("#television").prepend(trumpImage);
+        $("#television-change").prepend(rainbowImage);
 
       });
 
-    
-  </script>
 
 
+  	</script>
 
-  </body>
+	</body>
 </html>
