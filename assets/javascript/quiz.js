@@ -117,7 +117,7 @@ $('.startquiz').on('click', function(){
 	if (quizTaken == 1) {
 		firstQuiz();
 	} if (quizTaken == 2) {
-		secondQuiz();
+		// secondQuiz();
 	} else {
 	//alert the user there are no more quizzes at this time
 	}
@@ -132,10 +132,16 @@ $('.startquiz').on('click', function(){
 // $("#reset").on("click", reset);
 // $("#start").on("click", start);
 
+//There will be 5 questions in the game. When it hits 0. Game over
+var questionLimit = 0;
+
 //Display the first question. Then start timer.
 
-$('#questionOne').text(quiz2.questions[0].question);
+$('#questionA').append(quiz1.questions[0].question);
+$('#questionB').append(quiz1.questions[6].question);
 
+
+// console.log(quiz1.questions[0].question);
 
 
 
