@@ -234,6 +234,31 @@ div.fnn-logo2 {
 
 }
 
+#trump-left-head {
+  height: 100px;
+
+}
+
+#questionOne {
+  display: inline-block;
+  color: yellow;
+}
+
+#questionTwo {
+    display: inline-block;
+    color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .bbbbreaking-news {
   position: relative;  /*Parent MUST be relative*/

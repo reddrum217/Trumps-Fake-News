@@ -1,18 +1,14 @@
 //We will ned to require express here and a few other things
-
-var quizzesTaken = []
-
 //set up 3 objects for 3 different quizzes
-
 ///SAVE THESE FOR NOW
-
+alert('found quizjs');
 
 
 var quiz1 = {
 	questions: [
 	
 	//THIS IS FAKE NEWS
-	question1 {
+	question1 = {
 		question:'President Obama issues a full pardon for convicted rapper C-Murder, for killing a teenager outside nightclub in louisiana',
 		fake: true 
 	},
@@ -66,19 +62,19 @@ var quiz2 = {
 		fake: true 
 	},
 	question2 = {
-		question:'Rite Greens, a shop in Denver, Colorado has taken the steps needed to accept food stamps for the purposes of purchasing marijuana effectively leading to taxpayer funded marijuana for welfare recipients'
+		question:'Rite Greens, a shop in Denver, Colorado has taken the steps needed to accept food stamps for the purposes of purchasing marijuana effectively leading to taxpayer funded marijuana for welfare recipients',
 		fake: true
 	},
 	question3 = {
-		question:'Rite Greens, a shop in Denver, Colorado has taken the steps needed to accept food stamps for the purposes of purchasing marijuana effectively leading to taxpayer funded marijuana for welfare recipients'
+		question:'Rite Greens, a shop in Denver, Colorado has taken the steps needed to accept food stamps for the purposes of purchasing marijuana effectively leading to taxpayer funded marijuana for welfare recipients',
 		fake: true
 	}, 
 	question4 = {
-		question:'Rite Greens, a shop in Denver, Colorado has taken the steps needed to accept food stamps for the purposes of purchasing marijuana effectively leading to taxpayer funded marijuana for welfare recipients'
+		question:'Rite Greens, a shop in Denver, Colorado has taken the steps needed to accept food stamps for the purposes of purchasing marijuana effectively leading to taxpayer funded marijuana for welfare recipients',
 		fake: true
 	}, 
 	question5 = {
-		question:'Rite Greens, a shop in Denver, Colorado has taken the steps needed to accept food stamps for the purposes of purchasing marijuana effectively leading to taxpayer funded marijuana for welfare recipients'
+		question:'Rite Greens, a shop in Denver, Colorado has taken the steps needed to accept food stamps for the purposes of purchasing marijuana effectively leading to taxpayer funded marijuana for welfare recipients',
 		fake: true
 	},
 
@@ -106,68 +102,148 @@ var quiz2 = {
 	]};
    
 
-var quiz3 = {
-	questions: [
-	
-	//THIS IS FAKE NEWS
-	question1 = {
-		questionA:'Trump Reports World Record 39 Under Par, 12 Holes-in-One, during Golf Outing with Japanese Prime Minister Shinzo Abe',
-		fake: true
-	},
-	question2 = {
-		question:'Rite Greens, a shop in Denver, Colorado has taken the steps needed to accept food stamps for the purposes of purchasing marijuana effectively leading to taxpayer funded marijuana for welfare recipients'
-		fake: true
-	},
-	question3 = {
-		question:'Rite Greens, a shop in Denver, Colorado has taken the steps needed to accept food stamps for the purposes of purchasing marijuana effectively leading to taxpayer funded marijuana for welfare recipients'
-		fake: true
-	}, 
-	question4 = {
-		question:'Rite Greens, a shop in Denver, Colorado has taken the steps needed to accept food stamps for the purposes of purchasing marijuana effectively leading to taxpayer funded marijuana for welfare recipients'
-		fake: true
-	}, 
-	question5 = {
-		question:'Rite Greens, a shop in Denver, Colorado has taken the steps needed to accept food stamps for the purposes of purchasing marijuana effectively leading to taxpayer funded marijuana for welfare recipients'
-		fake: true
-	},
-
-	//THIS IS REAL NEWS
-	question6 = {
-		question: 'A decade ago after shaving her head, a bald Brittany Spears attacked a photographer’s car with an umbrella while at a gas station before speeding away',
-		fake: false 
-	},
-	question7 = {
-		question: 'A decade ago after shaving her head, a bald Brittany Spears attacked a photographer’s car with an umbrella while at a gas station before speeding away',
-		fake: false 
-	}, 
-	question8 = {
-		question: 'A decade ago after shaving her head, a bald Brittany Spears attacked a photographer’s car with an umbrella while at a gas station before speeding away',
-		fake: false 
-	}, 
-	question9 = {
-		question: 'A decade ago after shaving her head, a bald Brittany Spears attacked a photographer’s car with an umbrella while at a gas station before speeding away',
-		fake: false 
-	}, 
-	question10 = {
-		question: 'A decade ago after shaving her head, a bald Brittany Spears attacked a photographer’s car with an umbrella while at a gas station before speeding away',
-		fake: false 
-	},
-	]};
 
 //First let the computer choose a random quiz
-
+var quizTaken = 0;
 
 
 
 //Create a start button for the Questions page
 $('.startquiz').on('click', function(){
-	//start the game function when the user clicks
 
-}),
+
+	//start the game function when the user clicks
+	quizTaken++;
+	if (quizTaken == 1) {
+		firstQuiz();
+	} if (quizTaken == 2) {
+		secondQuiz();
+	} else {
+	//alert the user there are no more quizzes at this time
+	}
+
+});
+//Function to run quiz 1
+	function firstQuiz() {
+// alert('foundquiz1');
+//Start timer automatically. If user quesses or runs out of timer reset timer
+// $("#lap").on("click", recordLap);
+// $("#stop").on("click", stop);
+// $("#reset").on("click", reset);
+// $("#start").on("click", start);
+
+//Display the first question. Then start timer.
+
+$('#questionOne').text(quiz2.questions[0].question);
+
+
+
+
+var time = 0;
+var lap = 1;
+var stopWatch;
+
+
+function reset() {
+
+  time = 0;
+  lap = 1;
+
+  $("#timer-change").html("00:00");
+  $("#laps").html("");
+
+}
+
+function start() {
+  stopWatch = setInterval(count, 1000);
+}
+
+function stop() {
+
+  console.log("stopping");
+  clearInterval(stopWatch);
+
+}
+
+function recordLap() {
+
+  var converted = timeConverter(time);
+  var p = $('<p>').text("Lap " + lap + " : " + converted);
+
+  $("#laps").append(p);
+  laps++;
+}
+
+function count() {
+
+  time++;
+  var converted = timeConverter(time);
+  $("#timer-change").html(converted);
+
+}
+
+function timeConverter(t) {
+
+  var minutes = Math.floor(t / 60);
+  var seconds = t - (minutes * 60);
+
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+
+  if (minutes === 0) {
+    minutes = "00";
+  }
+  else if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+
+  return minutes + ":" + seconds;
+}
+
+
+//Set a time out on the question
+
+      var name = "Tim"; //this.name = Tim in the wondow
+      console.log(this.name); //it would be Tim
+      console.log(name); //it would be Tim
+
+      // We define a person, and include a method that logs his name along with a greeting.
+      var person = {
+        name: "Jeff",
+        sayHi: function() {
+          console.log("Hi, I'm " + this.name);
+          console.log(this);
+        }
+      };
+
+      // When we run it normally, it works like we intended.
+      person.sayHi(); //Hi I'm Jeff
+
+      setTimeout(person.sayHi, 2000); //this will print out Tim after 2 seconds
+
+      // Hi, I'm Jeff
+      // But if we include it in a timeout
+      setTimeout(person.sayHi.bind(person), 2000); //this will print out Jeff
+
+      setTimeout(person.sayHi(), 2000); //this will print out Tim on page load - not after 2 seconds
+
+
+};
+
+
+
+
+
+
+
+//Let the computer choose randlomly if FAKE NEWS goes on top or bottom
+
+
+
 
 //create a schema for a Mysql table
 
-//Let the computer pull up quiz 1
 //Let the computer choose randlomly if FAKE NEWS goe son top or bottom
 //Start the countdown
 //Allow the user to choose a fake news
